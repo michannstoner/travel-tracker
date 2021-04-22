@@ -11,22 +11,47 @@
     <title>Away - Travel Tracker</title>
   </head>
   <body>
+    <nav>
+      <h1 class='page-title'>Away</h1>
+      <div class='login-container hidden'>
+        <label for='username' class='login-label'>username:
+          <input type='text' placeholder='username' id='username'>
+        </label>
+        <label for='password' class='login-label'>password:
+          <input type='text' placeholder='password' id='password'>
+        </label>
+      </div>
+      <div class='welcome-container'>
+        <h3 class='greeting'>welcome, user!</h3>
+          <p class='total-cost'>your trip stats: $500 this year</p>
+      </div>
+    </nav>
     <main class='main-container'>
-      <nav>
-        <h1 class='page-title'>Away</h1>
-        <div class='login-container'>
-          <label for='username' class='login-label'>username:
-            <input type='text' placeholder='username' id='username'>
-          </label>
-          <label for='password' class='login-label'>password:
-            <input type='text' placeholder='password' id='password'>
-          </label>
+      <div class='booking-container'>
+        <h2>where to next?</h2>
+        <label for='start-date' class='start-date-label'>start date:<br>
+          <input type='date' id='startDate'>
+        </label>
+        <label for='duration' class='duration-label'>duration:<br>
+          <input type='number' min='0' id='duration'>
+        </label>
+        <label for='num-travelers' class='travelers-label'>number of travelers:<br>
+          <input type='number' min='0' id='numberOfTravelers'>
+        </label>
+        <button class='submit-form'>away we go!</button>
+      </div>
+      <section class='trip-container'>
+        <h2 class='trip-title'>Your Trips</h2>
+        <div class=button-container>
+          <button class='pending' id='pending'>pending trips</button>
+          <button class='active' id='active'>active trips</button>
+          <button class='all-trips' id='allTrips'>all trips</button>
         </div>
 
 
-      </nav>
 
 
+      </section>
     </main>
   </body>
 </html>
