@@ -37,6 +37,8 @@ View deployed page [here]
 - Mocha & Chai
 - Local API
 - WebPack
+- Miro for [wireframing](https://miro.com/app/board/o9J_lNdlWV8=/)
+- GitHub projects for the [project board](https://github.com/michannstoner/travel-tracker/projects/1)
 
 ### Wins & Challenges 
 
