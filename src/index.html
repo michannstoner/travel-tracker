@@ -32,25 +32,36 @@
         <label for='start-date' class='start-date-label'>start date:<br>
           <input type='date' id='startDate'>
         </label>
-        <label for='duration' class='duration-label'>duration:<br>
-          <input type='number' min='0' id='duration'>
+        <label for='duration' class='duration-label'>duration (days):<br>
+          <input type='number' min='1' id='duration'>
         </label>
         <label for='num-travelers' class='travelers-label'>number of travelers:<br>
-          <input type='number' min='0' id='numberOfTravelers'>
+          <input type='number' min='1' id='numberOfTravelers'>
         </label>
         <button class='submit-form'>away we go!</button>
       </div>
       <section class='trip-container'>
-        <h2 class='trip-title'>Your Trips</h2>
+        <h2 class='trip-header'>Your Trips</h2>
         <div class=button-container>
           <button class='pending' id='pending'>pending trips</button>
           <button class='active' id='active'>active trips</button>
           <button class='all-trips' id='allTrips'>all trips</button>
         </div>
-
-
-
-
+        <div class='card-container'>
+          <article class='card'>
+            <div class=img-container>
+              //image tag here 
+            </div>
+            <h3 class='trip-title'>destination</h3>
+            <p class='trip-info'>date:<br>
+              travelers:<br>
+              duration:<br>
+              lodging cost:<br>
+              flight per person:<br>
+              status:
+            </p>
+          </article>
+        </div>
       </section>
     </main>
   </body>
