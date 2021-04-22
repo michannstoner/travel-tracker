@@ -20,7 +20,7 @@ Away is the start of a travel tracker application. As a user, you will be prompt
 2. `cd` into the repository on your local machine
 3. Run `npm install` 
 4. Run `npm start`
-5. `git clone` this [API repository](https://github.com/turingschool-examples/travel-tracker-api). 
+5. `git clone` this [API repository](https://github.com/turingschool-examples/travel-tracker-api)
 6. Run `npm install`
 7. Run `npm start`
 8. Double check that both are running, and enjoy!
