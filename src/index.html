@@ -1,13 +1,68 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Webpack Starter Kit</title>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">  
+    <title>Away - Travel Tracker</title>
   </head>
   <body>
-    <h1>Webpack Starter Kit</h1>
-
-    <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
-
-    <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
+    <nav>
+      <h1 class='page-title'>Away</h1>
+      <div class='login-container hidden'>
+        <label for='username' class='login-label'>username:
+          <input type='text' placeholder='username' id='username'>
+        </label>
+        <label for='password' class='login-label'>password:
+          <input type='text' placeholder='password' id='password'>
+        </label>
+      </div>
+      <div class='welcome-container'>
+        <h3 class='greeting'>welcome, user!</h3>
+          <p class='total-cost'>your trip stats: $500 this year</p>
+      </div>
+    </nav>
+    <main class='main-container'>
+      <div class='booking-container'>
+        <h2>where to next?</h2>
+        <label for='start-date' class='start-date-label'>start date:<br>
+          <input type='date' id='startDate'>
+        </label>
+        <label for='duration' class='duration-label'>duration (days):<br>
+          <input type='number' min='1' id='duration'>
+        </label>
+        <label for='num-travelers' class='travelers-label'>number of travelers:<br>
+          <input type='number' min='1' id='numberOfTravelers'>
+        </label>
+        <button class='submit-form'>away we go!</button>
+      </div>
+      <section class='trip-container'>
+        <h2 class='trip-header'>Your Trips</h2>
+        <div class=button-container>
+          <button class='pending' id='pending'>pending trips</button>
+          <button class='active' id='active'>active trips</button>
+          <button class='all-trips' id='allTrips'>all trips</button>
+        </div>
+        <div class='card-container'>
+          <article class='card'>
+            <div class=img-container>
+              //image tag here 
+            </div>
+            <h3 class='trip-title'>destination</h3>
+            <p class='trip-info'>date:<br>
+              travelers:<br>
+              duration:<br>
+              lodging cost:<br>
+              flight per person:<br>
+              status:
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
