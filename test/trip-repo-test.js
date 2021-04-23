@@ -5,15 +5,14 @@ import destinationData from './test-data/destination-test-data.js'
 import TripRepo from '../src/Trip-Repo.js';
 
 describe('TripRepo', () => {
-  let trip1;
-  let trip2;
+  let trip;
 
     beforeEach(() => {
-      trip1 = new TripRepo(allTripsData[0], destinationData);
+      trip = new TripRepo(allTripsData[0], destinationData);
     });
 
     it('should be an instance of TripRepo', () => {
-      expect(trip1).to.be.an.instanceOf(TripRepo);
+      expect(trip).to.be.an.instanceOf(TripRepo);
     });
 
     it('should store trip data', () => {
@@ -24,9 +23,17 @@ describe('TripRepo', () => {
       expect(trip.date).to.equal('2019/09/16');
       expect(trip.duration).to.equal(8);
       expect(trip.status).to.equal('approved');
-      expect(trip.suggestedActivities).to.equal([]);
+      expect(trip.suggestedActivities).to.deep.equal([]);
+    });
 
-    })
+    it('should also store destination data', () => {
+      expect(trip.destination).to.deep.equal(destinationData[0])
+    });
+
+    it('should calculate trip cost', () => {
+      const tripCost = trip.calculateTripCost();
+      expect(tripCost).to.equal()
+    });
 
 
 
