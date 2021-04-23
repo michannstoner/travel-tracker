@@ -8,6 +8,13 @@ let apiCalls = {
     return fetchAllTravelers;
   },
 
+  getSingleTraveler() {
+    const fetchSingleTraveler = fetch('http://localhost:3001/api/v1/travelers/1')
+      .then(response => response.json())
+      .then(singleTravelerData => singleTravelerData)
+    return fetchSingleTraveler;
+  },
+
   getAllTrips() {
     const fetchAllTrips = fetch('http://localhost:3001/api/v1/trips')
       .then(response => response.json())
@@ -23,14 +30,17 @@ let apiCalls = {
   },
 
   getData() {
-    return Promise.all([this.getAllTravelers(), this.getAllTrips(), this.getAllDestinations()])
+    return Promise.all([this.getAllTravelers(), this.getAllTrips(), this.getAllDestinations(), this.getSingleTraveler()])
       .then(data => {
-        let allData = [];
-        allData.allTravelers = allData.push(data[0]);
-        allData.allTrips = allData.push(data[1]);
-        allData.allDestinations = allData.push(data[2]);
+        let allData = {};
+        allData.allTravelers = data[0];
+        allData.allTrips = data[1];
+        allData.allDestinations = data[2];
+        allData.singleTraveler = data[3];
+        console.log(allData)
         return allData;
       })
+      .catch(err => console.log('Oops, something went wrong'))
   },
 }
 
