@@ -32,7 +32,7 @@ describe('TripRepo', () => {
 
     it('should calculate trip cost', () => {
       const tripCost = trip.calculateTripCost();
-      expect(tripCost).to.equal()
+      expect(tripCost).to.equal(5819);
     });
 
 
