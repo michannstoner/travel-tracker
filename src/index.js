@@ -13,8 +13,9 @@ function onStartup() {
     travelerData = allData[0].travelers;
     tripData = allData[1].trips;
     destinationData = allData[2].destinations;
-    currentTraveler = new Traveler(travelerData[1], tripData, destinationData);
+    currentTraveler = new Traveler(travelerData[2], tripData, destinationData);
     console.log(currentTraveler);
+    domUpdates.greetUser(currentTraveler);
     domUpdates.displayTrips(currentTraveler);
   });
 }

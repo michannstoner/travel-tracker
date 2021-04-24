@@ -3,6 +3,14 @@ import apiCalls from './api-calls.js';
 
 let domUpdates = {
 
+greetUser(traveler) {
+const greetingArea = document.querySelector('#welcomeContainer');
+const name = traveler.name.split(' ');
+const firstName = name[0];
+console.log(firstName);
+greetingArea.innerText = `Welcome, ${firstName}!`;
+},
+
 displayTrips(traveler) {
   const tripDisplayArea = document.querySelector('#cardContainer');
   tripDisplayArea.innerHTML = '';
