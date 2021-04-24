@@ -66,6 +66,6 @@ describe('Traveler', () => {
 
   it('should calculate a travelers amount spent for the year', () => {
     const travelerCost = traveler.calculateSpentThisYear()
-    expect(travelerCost).to.equal(0);
+    expect(travelerCost).to.equal(16104);
   });
-})
+});

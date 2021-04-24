@@ -20,31 +20,18 @@ class Traveler {
   }
 
   calculateSpentThisYear() {
-  console.log(this.tripData)
-    let yearlyTripCost = this.tripData.filter(trip => {
+    const yearlyTripCost = this.tripData.filter(trip => {
       let travelDates = trip.date;
-      // console.log(travelDates)
       if (new Date(travelDates).getFullYear() === 2020) {
-        // console.log(trip)
+        return trip;
       }
-    })
-  
+    });
+    const totalYearSpent = yearlyTripCost.reduce((total, curTrip) => {
+      total += curTrip.calculateTripCost();
+      return total;
+    }, 0);
+    return totalYearSpent;
   }
-
-  getDate(date) {
-    // const year = date.getFullYear();
-    // const month = date.getFullMonth();
-    // const day = today.getDate();
-    const today = new Date();
-    const justDay = today.getDate();
-    const year = today.getFullYear();
-    const month = today.getMonth() + 1;
-    const fullDate = `${year}/${month}/${justDay}`
-    console.log(fullDate);
-
-  }
-
-
 }
 
 export default Traveler;
