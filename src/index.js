@@ -1,30 +1,21 @@
-// This is the JavaScript entry file - your code begins here
-// Do not delete or rename this file ********
-
-// An example of how you tell webpack to use a CSS (SCSS) file
 import './css/base.scss';
 import apiCalls from './api-calls.js';
-// const fetchAllTravelers = fetch('http://localhost:3001/api/v1/travelers')
-//   .then(response => response.json())
-//   .then(data => data);
+import domUpdates from './dom-updates.js';
+import Traveler from './Traveler';
 
+let currentTraveler, travelerData, tripData, destinationData;
 
+window.addEventListener('load', onStartup);
 
-
-
-
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
-// import './images/turing-logo.png'
-
-console.log('This is the JavaScript entry file - your code begins here.');
-
-window.addEventListener('load', fetchAllData);
-
-function fetchAllData() {
-  apiCalls.getData();
-  // return Promise.all([fetchAllTravelers])
-  //   .then(data => {
-  //     console.log(data)
-  //     return data;
-  // })
+function onStartup() {
+  apiCalls.getData()
+  .then(allData => {
+    travelerData = allData[0].travelers;
+    tripData = allData[1].trips;
+    destinationData = allData[2].destinations;
+    currentTraveler = new Traveler(travelerData[1], tripData, destinationData);
+    console.log(currentTraveler);
+    domUpdates.displayTrips(currentTraveler);
+  });
 }
+

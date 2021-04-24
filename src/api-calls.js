@@ -1,10 +1,12 @@
 // import domUpdates from './dom-updates.js'
 
+import domUpdates from "./dom-updates";
+
 let apiCalls = {
   getAllTravelers() {
     const fetchAllTravelers = fetch('http://localhost:3001/api/v1/travelers')
       .then(response => response.json())
-      .then(data => data.travelers)
+      .then(data => data)
     return fetchAllTravelers;
   },
 
@@ -18,28 +20,21 @@ let apiCalls = {
   getAllTrips() {
     const fetchAllTrips = fetch('http://localhost:3001/api/v1/trips')
       .then(response => response.json())
-      .then(data => data.trips)
+      // .then(data => domUpdates.displayTrips())
+      .then(data => data)
     return fetchAllTrips; 
   },
 
   getAllDestinations() {
     const fetchAllDestinations = fetch('http://localhost:3001/api/v1/destinations')
       .then(response => response.json())
-      .then(data => data.destinations)
+      .then(data => data)
     return fetchAllDestinations
   },
 
   getData() {
     return Promise.all([this.getAllTravelers(), this.getAllTrips(), this.getAllDestinations(), this.getSingleTraveler()])
-      .then(data => {
-        let allData = {};
-        allData.allTravelers = data[0];
-        allData.allTrips = data[1];
-        allData.allDestinations = data[2];
-        allData.singleTraveler = data[3];
-        console.log(allData)
-        return allData;
-      })
+      .then(data => data)
       .catch(err => console.log('Oops, something went wrong'))
   },
 }
