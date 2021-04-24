@@ -43,7 +43,7 @@ describe('Traveler', () => {
           alt: 'opera house and city buildings on the water with boats'
         }
       },
-       {
+      {
         id: 4,
         userID: 1,
         destinationID: 4,
