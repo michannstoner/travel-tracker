@@ -13,10 +13,10 @@ function onStartup() {
     travelerData = allData[0].travelers;
     tripData = allData[1].trips;
     destinationData = allData[2].destinations;
-    currentTraveler = new Traveler(travelerData[2], tripData, destinationData);
-    console.log(currentTraveler);
+    currentTraveler = new Traveler(travelerData[0], tripData, destinationData);
     domUpdates.greetUser(currentTraveler);
     domUpdates.displayTrips(currentTraveler);
+    domUpdates.displayYearlySpending(currentTraveler);
   });
 }
 

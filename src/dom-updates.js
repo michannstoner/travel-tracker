@@ -1,13 +1,11 @@
 import Traveler from "./Traveler";
 import apiCalls from './api-calls.js';
-
 let domUpdates = {
 
 greetUser(traveler) {
 const greetingArea = document.querySelector('#welcomeContainer');
 const name = traveler.name.split(' ');
 const firstName = name[0];
-console.log(firstName);
 greetingArea.innerText = `Welcome, ${firstName}!`;
 },
 
@@ -36,6 +34,12 @@ displayTrips(traveler) {
     })
   }
   tripDisplayArea.insertAdjacentHTML('beforeend', tripInfo);
+ },
+
+ displayYearlySpending(traveler) {
+ const costDisplayArea = document.querySelector('#costContainer');
+ const yearTripCost = traveler.calculateSpentThisYear();
+ costDisplayArea.innerText = `You've spent $${yearTripCost} this year!`
  },
   // grab all trips for a user => fetched data 
   // create a function to display user trips => new instance of traveler with fetched data

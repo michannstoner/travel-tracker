@@ -1,5 +1,3 @@
-// import domUpdates from './dom-updates.js'
-
 import domUpdates from "./dom-updates";
 
 let apiCalls = {
@@ -20,7 +18,6 @@ let apiCalls = {
   getAllTrips() {
     const fetchAllTrips = fetch('http://localhost:3001/api/v1/trips')
       .then(response => response.json())
-      // .then(data => domUpdates.displayTrips())
       .then(data => data)
     return fetchAllTrips; 
   },
