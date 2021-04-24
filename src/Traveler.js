@@ -22,7 +22,7 @@ class Traveler {
   calculateSpentThisYear() {
     const yearlyTripCost = this.tripData.filter(trip => {
       let travelDates = trip.date;
-      if (new Date(travelDates).getFullYear() === 2020) {
+      if (new Date(travelDates).getFullYear() === 2021) {
         return trip;
       }
     });
