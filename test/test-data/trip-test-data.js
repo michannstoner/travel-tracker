@@ -21,8 +21,8 @@ const allTripsData = [
     },
     {
     "id": 3,
-    "userID": 3,
-    "destinationID": 22,
+    "userID": 1,
+    "destinationID": 3,
     "travelers": 4,
     "date": "2020/05/22",
     "duration": 17,
@@ -31,8 +31,8 @@ const allTripsData = [
     },
     {
     "id": 4,
-    "userID": 43,
-    "destinationID": 14,
+    "userID": 1,
+    "destinationID": 4,
     "travelers": 2,
     "date": "2020/02/25",
     "duration": 10,
