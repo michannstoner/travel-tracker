@@ -4,19 +4,21 @@ import domUpdates from './dom-updates.js';
 import Traveler from './Traveler';
 
 let currentTraveler, travelerData, tripData, destinationData;
+const formButton = document.querySelector('#submitForm');
 
 window.addEventListener('load', onStartup);
+
 
 function onStartup() {
   apiCalls.getData()
   .then(allData => {
     travelerData = allData[0].travelers;
     tripData = allData[1].trips;
-    destinationData = allData[2].destinations;
-    currentTraveler = new Traveler(travelerData[0], tripData, destinationData);
+    destinationData = allData[2].destinations;    currentTraveler = new Traveler(travelerData[0], tripData, destinationData);
     domUpdates.greetUser(currentTraveler);
     domUpdates.displayTrips(currentTraveler);
     domUpdates.displayYearlySpending(currentTraveler);
+    domUpdates.getDestinationsInDropdown(destinationData);
   });
 }
 

@@ -41,6 +41,19 @@ displayTrips(traveler) {
  const yearTripCost = traveler.calculateSpentThisYear();
  costDisplayArea.innerText = `You've spent $${yearTripCost} this year!`
  },
+
+ getDestinationsInDropdown(destination) {
+  const dropdownMenu = document.querySelector('#destinationDropdown');
+  let newOption = document.createElement('option');
+  newOption.text = '';
+  dropdownMenu.add(newOption)
+  let option; 
+  destination.map(destination => {
+    option = document.createElement('option');
+    option.text = destination.destination;
+    dropdownMenu.add(option);
+  })
+ },
   // grab all trips for a user => fetched data 
   // create a function to display user trips => new instance of traveler with fetched data
   // insert innerHTML and interpolate relevant info to be displayed
