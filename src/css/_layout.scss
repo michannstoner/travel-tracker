@@ -53,11 +53,13 @@ nav {
   align-content: space-evenly;
   overflow: auto;
   min-width: 75vw;
-  margin-top: 7%;
+  margin-top: 5%;
 }
 
 .card {
   @include dimensions(50vh, auto);
+  border: 2px solid #e5e5e5;
+  margin-top: 4%;
 }
 
 .destination-img {
@@ -69,6 +71,7 @@ nav {
   overflow: hidden;
   background-size: contain;
 }
+
 
 
 
