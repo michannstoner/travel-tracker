@@ -50,10 +50,10 @@ nav {
 .card-container {
   @include flex(row);
   @include justify(space-evenly);
-  @include dimensions(100vh, 70%);
+  @include dimensions(auto, 70%);
   flex-wrap: wrap;
   align-content: space-evenly;
-  overflow: auto;
+  overflow-y: scroll;
   min-width: 70vw;
   margin-top: 5%;
 }
