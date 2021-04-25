@@ -1,6 +1,7 @@
 import Traveler from "./Traveler";
 import apiCalls from './api-calls.js';
-const bookingButton = document.querySelector('.booking-button');
+import tripData from './index.js';
+
 const costDisplayArea = document.querySelector('#costContainer');
 const dropdownMenu = document.querySelector('#destinationDropdown');
 const durationInput = document.querySelector('#duration');
@@ -64,6 +65,7 @@ displayTrips(traveler) {
  },
 
  checkValidation() {
+   let validForm;
   const dateValue = new Date(startDateInput.value).toString();
   const currentDate = new Date().toString();
   if (startDateInput.value !== dateValue || dateValue < currentDate) {
@@ -79,15 +81,27 @@ displayTrips(traveler) {
       errorMessage.classList.remove('hidden');  
   } else {
     errorMessage.classList.add('hidden');
-    this.submitForm()
+    validForm = true;
+ }
+    return validForm;
+},
+
+ createNewTripRequest(traveler, tripData, destinationData) {
+  const travelDate = new Date(startDateInput.value);
+  const matchingDestination = destinationData.filter(destination => destination.destination === dropdownMenu.value)
+  console.log(matchingDestination);
+
+  const tripRequest = {
+    id: Date.now(),
+    userID: traveler.id,
+    destinationID: matchingDestination.map(destination => destination.id).pop(),
+    travelers: parseInt(numTravelersInput.value),
+    date: travelDate,
+    duration: parseInt(durationInput.value),
+    status: 'pending',
+    suggestedActivities: []
   }
  },
-
- submitForm() {
-   console.log('helloooo');
-  quoteDisplayArea.classList.remove('hidden');
-  bookingButton.classList.remove('hidden');
- }
 
 
 
