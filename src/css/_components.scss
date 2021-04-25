@@ -1,17 +1,4 @@
-/* LAYOUTS & GENERAL COMPONENTS */
-body {
-  background: $primary-background;
-}
 
-/* NAV */
-nav {
-  background-color: $nav-background;
-  @include flex(row);
-  @include justify(space-between);
-  @include dimensions(15vh, 100%);
-  position: absolute;
-
-}
 
 .hidden {
   display: none;
