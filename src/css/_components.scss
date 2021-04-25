@@ -5,6 +5,7 @@
 
 h2 {
   margin-left: 3%;
+  font-weight: bolder;
 }
 
 .page-title {
@@ -28,6 +29,8 @@ button {
   background-color: $accent-color;
   color: $primary-background;
   border: none;
+  font-size: larger;
+  font-weight: bolder;
 
   &:hover {
     background-color: #81b29a;

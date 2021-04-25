@@ -53,7 +53,6 @@ nav {
   @include dimensions(auto, 70%);
   flex-wrap: wrap;
   align-content: space-evenly;
-  overflow-y: scroll;
   min-width: 70vw;
   margin-top: 5%;
 }
