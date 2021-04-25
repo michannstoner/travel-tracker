@@ -1,7 +1,10 @@
 import Traveler from "./Traveler";
 import apiCalls from './api-calls.js';
 import tripData from './index.js';
+import TripRepo from "./Trip-Repo";
+let newTrip;
 
+const bookingDisplayArea = document.querySelector('.booking-area');
 const costDisplayArea = document.querySelector('#costContainer');
 const dropdownMenu = document.querySelector('#destinationDropdown');
 const durationInput = document.querySelector('#duration');
@@ -14,7 +17,6 @@ const quoteDisplayArea = document.querySelector('.price-quote');
 
 
 let domUpdates = {
-
 greetUser(traveler) {
 const name = traveler.name.split(' ');
 const firstName = name[0];
@@ -68,14 +70,21 @@ displayTrips(traveler) {
    let validForm;
   const dateValue = new Date(startDateInput.value).toString();
   const currentDate = new Date().toString();
+
   if (startDateInput.value !== dateValue || dateValue < currentDate) {
       errorMessage.classList.remove('hidden');
-  } 
+  } else {
+    validForm = true;
+  }
   if (!durationInput.value) {
       errorMessage.classList.remove('hidden');
+  } else {
+    validForm = true;
   }
   if (!numTravelersInput.value) {
       errorMessage.classList.remove('hidden');
+  } else {
+    validForm = true;
   }
   if (!dropdownMenu.value) {
       errorMessage.classList.remove('hidden');  
@@ -88,38 +97,49 @@ displayTrips(traveler) {
 
  createNewTripRequest(traveler, tripData, destinationData) {
   const travelDate = new Date(startDateInput.value);
+  const dateForRequest = `${travelDate.getFullYear()}/${travelDate.getMonth() + 1}/${travelDate.getDate()}`
   const matchingDestination = destinationData.filter(destination => destination.destination === dropdownMenu.value)
-  console.log(matchingDestination);
 
-  const tripRequest = {
+  let tripRequest = {
     id: Date.now(),
     userID: traveler.id,
     destinationID: matchingDestination.map(destination => destination.id).pop(),
     travelers: parseInt(numTravelersInput.value),
-    date: travelDate,
+    date: dateForRequest,
     duration: parseInt(durationInput.value),
     status: 'pending',
     suggestedActivities: []
   }
+
+  newTrip = new TripRepo(tripRequest, destinationData);
+  this.calculateTripCost(newTrip);
  },
 
+ calculateTripCost(trip) {
+  bookingDisplayArea.classList.remove('hidden');
+  let tripCost = trip.calculateTripCost();
+  quoteDisplayArea.innerText = `Estimated trip cost: $${tripCost}`
+ },
 
+ sendTripRequest() {
+   fetch('http://localhost:3001/api/v1/trips', {
+     method: 'Post',
+     body: JSON.stringify(newTrip),
+     headers: {
+       'Content-type': 'application/json'
+     }
+   })
+   quoteDisplayArea.innerText = 'Request sent to agent, check pending trips!'
+   setTimeout(this.clearFormFields, 1000);
+ },
 
-  // createNewTripRequest(traveler, allTripsData, allDestinationsData) {
-    
-    // let trip = {
-    //   id: Date.now(),
-    //   userID: traveler.id,
-    //   destinationID: allTripsData.filter(destination => {
-
-    //   })
-
-    // }
-  // },
-  // grab all trips for a user => fetched data 
-  // create a function to display user trips => new instance of traveler with fetched data
-  // insert innerHTML and interpolate relevant info to be displayed
-
+ clearFormFields() {
+   startDateInput.value = '';
+   durationInput.value = '';
+   numTravelersInput.value = '';
+   dropdownMenu.value = '';
+   location.reload();
+ },
 };
 
 export default domUpdates;

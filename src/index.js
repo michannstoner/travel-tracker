@@ -3,8 +3,7 @@ import './css/base.scss';
 import apiCalls from './api-calls.js';
 import domUpdates from './dom-updates.js';
 import Traveler from './Traveler';
-
-export let currentTraveler, travelerData, tripData, destinationData;
+let currentTraveler, travelerData, tripData, destinationData;
 
 const formButton = document.querySelector('#submitForm');
 const bookingButton = document.querySelector('.booking-button');
@@ -32,14 +31,18 @@ function onStartup() {
 
 function checkForm(event) {
   event.preventDefault();
-  domUpdates.checkValidation();
   if (domUpdates.checkValidation()) {
-    bookingButton.classList.remove('hidden');
+    formButton.classList.add('hidden');
+    domUpdates.createNewTripRequest(currentTraveler, tripData, destinationData);
   }
 }
 
 function handleTripRequest() {
-domUpdates.createNewTripRequest(currentTraveler, tripData, destinationData);
-
+  domUpdates.sendTripRequest()
+  bookingButton.classList.add('hidden');
 }
+
+
+
+
 
