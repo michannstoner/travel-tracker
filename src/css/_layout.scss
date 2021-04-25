@@ -43,6 +43,10 @@ nav {
   margin-top: 150px;
 }
 
+.header-container {
+  margin-left: 5%;
+}
+
 .card-container {
   @include flex(row);
   @include justify(space-evenly);

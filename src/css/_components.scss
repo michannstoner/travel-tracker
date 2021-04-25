@@ -3,6 +3,10 @@
   // border: 1px solid red;
 }
 
+h2 {
+  margin-left: 3%;
+}
+
 .page-title {
   font-family: $accent-font; 
   letter-spacing: .2rem;
@@ -19,6 +23,7 @@
   }
 }
 
+/* BUTTONS */
 button {
   background-color: $accent-color;
   color: $primary-background;
@@ -29,12 +34,20 @@ button {
   }
 }
 
+.submit-form {
+  @include dimensions(6vh, 100%)
+}
+
 .pending, 
 .active,
 .all-trips {
-  @include dimensions(6vh, 20%);
-  border-radius: 12px;
+  @include dimensions(6vh, 15%);
+  // border-radius: 12px;
   margin: auto;
+}
+
+.pending {
+  margin-left: 3%;
 }
 
 .error-message {
