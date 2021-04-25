@@ -3,10 +3,22 @@
   // border: 1px solid red;
 }
 
-h1 {
+.page-title {
   font-family: $accent-font; 
   letter-spacing: .2rem;
+  margin-left: 5%;
+  font-size: 3em;
 }
+
+.greeting-container {
+  margin-right: 5%;
+
+  .welcome-container {
+    font-family: $accent-font;
+    font-size: 2em;
+  }
+}
+
 button {
   background-color: $accent-color;
   color: $primary-background;
@@ -17,10 +29,6 @@ button {
   }
 }
 
-// .submit-form {
-//   @include dimensions(40vh, 50%);
-// }
-
 .pending, 
 .active,
 .all-trips {
@@ -29,8 +37,13 @@ button {
   margin: auto;
 }
 
-
-
 .error-message {
   color: #d90429;
+}
+
+.start-date,
+.duration,
+.num-travelers,
+.destination {
+  @include dimensions(3vh, 100%);
 }
