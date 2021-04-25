@@ -1,0 +1,65 @@
+* {
+  font-family: $font-style;
+  // border: 1px solid red;
+}
+
+h2 {
+  margin-left: 3%;
+  font-weight: bolder;
+}
+
+.page-title {
+  font-family: $accent-font; 
+  letter-spacing: .2rem;
+  margin-left: 5%;
+  font-size: 3em;
+}
+
+.greeting-container {
+  margin-right: 5%;
+
+  .welcome-container {
+    font-family: $accent-font;
+    font-size: 2em;
+  }
+}
+
+/* BUTTONS */
+button {
+  background-color: $accent-color;
+  color: $primary-background;
+  border: none;
+  font-size: larger;
+  font-weight: bolder;
+
+  &:hover {
+    background-color: #81b29a;
+  }
+}
+
+.submit-form {
+  @include dimensions(6vh, 100%)
+}
+
+.pending, 
+.active,
+.all-trips {
+  @include dimensions(6vh, 15%);
+  // border-radius: 12px;
+  margin: auto;
+}
+
+.pending {
+  margin-left: 3%;
+}
+
+.error-message {
+  color: #d90429;
+}
+
+.start-date,
+.duration,
+.num-travelers,
+.destination {
+  @include dimensions(3vh, 100%);
+}

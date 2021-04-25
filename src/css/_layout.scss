@@ -1,0 +1,79 @@
+/* LAYOUTS & GENERAL COMPONENTS */
+body {
+  background: $primary-background;
+}
+
+html {
+  width: 100%;
+}
+
+.main-container {
+  @include flex(row);
+  justify-content: space-around;
+}
+
+.hidden {
+  display: none;
+}
+
+/* NAV */
+nav {
+  background-color: $nav-background;
+  @include flex(row);
+  @include justify(space-between);
+  align-items: center;
+  @include dimensions(15vh, 100%);
+  position: absolute;
+}
+
+/* BOOKING CONTAINER */
+.booking-container {
+  @include flex(column);
+  @include justify(space-evenly);
+  align-content: center;
+  margin-top: 150px;
+  margin-right: 5%;
+  margin-left: 5%;
+  position: relative;
+} 
+
+/* TRIP CONTAINER */
+.trip-container {
+  @include dimensions(60vh, 80%);
+  margin-top: 150px;
+}
+
+.header-container {
+  margin-left: 5%;
+}
+
+.card-container {
+  @include flex(row);
+  @include justify(space-evenly);
+  @include dimensions(auto, 70%);
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  min-width: 70vw;
+  margin-top: 5%;
+}
+
+.card {
+  @include dimensions(50vh, auto);
+  @include flex(column);
+  border: 2px solid #e5e5e5;
+  margin-top: 4%;
+}
+
+.destination-img {
+  @include dimensions(20vh, 20vw)
+}
+
+.img-container {
+  @include dimensions(20vh, 20vw);
+  overflow: hidden;
+  background-size: contain;
+}
+
+
+
+
