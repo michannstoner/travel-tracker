@@ -1,14 +1,35 @@
 * {
   font-family: $font-style;
+  // border: 1px solid red;
 }
 
 h1 {
   font-family: $accent-font; 
+  letter-spacing: .2rem;
 }
 button {
   background-color: $accent-color;
   color: $primary-background;
+  border: none;
+
+  &:hover {
+    background-color: #81b29a;
+  }
 }
+
+// .submit-form {
+//   @include dimensions(40vh, 50%);
+// }
+
+.pending, 
+.active,
+.all-trips {
+  @include dimensions(6vh, 20%);
+  border-radius: 12px;
+  margin: auto;
+}
+
+
 
 .error-message {
   color: #d90429;
