@@ -1,20 +1,17 @@
 
-
-.hidden {
-  display: none;
-}
 button {
   background-color: $accent-color;
   color: $primary-background;
 }
 
 .booking-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 30vh;
-  margin-right: 40px;
-  margin-top: 75px;
+  @include flex(column);
+  @include justify(space-between);
+  @include dimensions (30vh, 30%);
+  align-items: center;
+  margin-top: 150px;
+  margin-right: 20px;
+  margin-left: 20px;
 } 
 
 .trip-container {
