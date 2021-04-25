@@ -13,6 +13,33 @@ nav {
 
 }
 
+.booking-container {
+  @include flex(column);
+  @include justify(space-between);
+  @include dimensions (30vh, 30%);
+  align-items: center;
+  margin-top: 150px;
+  margin-right: 20px;
+  margin-left: 20px;
+} 
+
+.trip-container {
+  @include dimensions(30vh, 70%);
+  margin-top: 75px;
+}
+
+.card-container {
+  @include flex(row);
+  @include dimensions(30vh, 70%)
+  flex-wrap: wrap;
+  // overflow-y ::-webkit-scrollbar;
+}
+
+.main-container {
+  @include flex(row);
+  @include dimensions(50vh, 100%)
+}
+
 .hidden {
   display: none;
 }
