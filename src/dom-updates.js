@@ -1,16 +1,26 @@
 import Traveler from "./Traveler";
 import apiCalls from './api-calls.js';
+const bookingButton = document.querySelector('.booking-button');
+const costDisplayArea = document.querySelector('#costContainer');
+const dropdownMenu = document.querySelector('#destinationDropdown');
+const durationInput = document.querySelector('#duration');
+const errorMessage = document.querySelector('.error-message');
+const greetingArea = document.querySelector('#welcomeContainer');
+const numTravelersInput = document.querySelector('#numberOfTravelers');
+const startDateInput = document.querySelector('#startDate');
+const tripDisplayArea = document.querySelector('#cardContainer');
+const quoteDisplayArea = document.querySelector('.price-quote');
+
+
 let domUpdates = {
 
 greetUser(traveler) {
-const greetingArea = document.querySelector('#welcomeContainer');
 const name = traveler.name.split(' ');
 const firstName = name[0];
 greetingArea.innerText = `Welcome, ${firstName}!`;
 },
 
 displayTrips(traveler) {
-  const tripDisplayArea = document.querySelector('#cardContainer');
   tripDisplayArea.innerHTML = '';
   let tripInfo = '';
   if (traveler.tripData.length > 0) {
@@ -37,13 +47,11 @@ displayTrips(traveler) {
  },
 
  displayYearlySpending(traveler) {
- const costDisplayArea = document.querySelector('#costContainer');
  const yearTripCost = traveler.calculateSpentThisYear();
  costDisplayArea.innerText = `You've spent $${yearTripCost} this year!`
  },
 
  getDestinationsInDropdown(destination) {
-  const dropdownMenu = document.querySelector('#destinationDropdown');
   let newOption = document.createElement('option');
   newOption.text = '';
   dropdownMenu.add(newOption)
@@ -54,6 +62,46 @@ displayTrips(traveler) {
     dropdownMenu.add(option);
   })
  },
+
+ checkValidation() {
+  const dateValue = new Date(startDateInput.value).toString();
+  const currentDate = new Date().toString();
+  if (startDateInput.value !== dateValue || dateValue < currentDate) {
+      errorMessage.classList.remove('hidden');
+  } 
+  if (!durationInput.value) {
+      errorMessage.classList.remove('hidden');
+  }
+  if (!numTravelersInput.value) {
+      errorMessage.classList.remove('hidden');
+  }
+  if (!dropdownMenu.value) {
+      errorMessage.classList.remove('hidden');  
+  } else {
+    errorMessage.classList.add('hidden');
+    this.submitForm()
+  }
+ },
+
+ submitForm() {
+   console.log('helloooo');
+  quoteDisplayArea.classList.remove('hidden');
+  bookingButton.classList.remove('hidden');
+ }
+
+
+
+  // createNewTripRequest(traveler, allTripsData, allDestinationsData) {
+    
+    // let trip = {
+    //   id: Date.now(),
+    //   userID: traveler.id,
+    //   destinationID: allTripsData.filter(destination => {
+
+    //   })
+
+    // }
+  // },
   // grab all trips for a user => fetched data 
   // create a function to display user trips => new instance of traveler with fetched data
   // insert innerHTML and interpolate relevant info to be displayed

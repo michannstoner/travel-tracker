@@ -32,18 +32,21 @@
       <div class='booking-container'>
         <h2>where to next?</h2>
         <label for='start-date' class='start-date-label'>start date:<br>
-          <input type='date' id='startDate'>
+          <input type='date' id='startDate' aria-required='true'>
         </label>
         <label for='duration' class='duration-label'>duration (days):<br>
-          <input type='number' min='1' id='duration'>
+          <input type='number' min='1' id='duration' aria-required='true'>
         </label>
         <label for='num-travelers' class='travelers-label'>number of travelers:<br>
-          <input type='number' min='1' id='numberOfTravelers'>
+          <input type='number' min='1' id='numberOfTravelers' aria-required='true'>
         </label>
         <label for='destination-dropdown' class='dropdown-list'>pick a destination:<br>
-          <select name='destinations' id='destinationDropdown'></select>
+          <select name='destinations' id='destinationDropdown' aria-required='true'></select>
         </label>
-        <button class='submit-form' id='submitForm'>away we go!</button>
+        <p class='error-message hidden'>Please fill out all fields and select a valid start date</p>
+        <button class='submit-form' id='submitForm'>Get a Quote</button>
+        <p class='price-quote hidden'>Your Trip Quote</p>
+        <button class='booking-button class hidden'>Click to Get Away!</button>
       </div>
       <section class='trip-container'>
         <h2 class='trip-header'>Your Trips</h2>
