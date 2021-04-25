@@ -1,0 +1,18 @@
+/* VARIABLES & MIXINS */
+$nav-background: #f4f1de;
+$primary-background: #FFFFFF;
+$accent-color: #e07a5f;
+
+@mixin flex($dir) {
+  display: flex;
+  flex-direction: $dir;
+}
+
+@mixin justify($spacing) {
+  justify-content: $spacing;
+}
+
+@mixin dimensions($height, $width) {
+  height: $height;
+  width: $width;
+}
