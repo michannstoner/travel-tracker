@@ -2,6 +2,8 @@
 $nav-background: #f4f1de;
 $primary-background: #FFFFFF;
 $accent-color: #e07a5f;
+$font-style: 'Open Sans', sans-serif;
+$accent-font: 'DM Serif Display', serif;
 
 @mixin flex($dir) {
   display: flex;
