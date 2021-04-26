@@ -130,7 +130,7 @@ displayTrips(traveler) {
      }
    })
    quoteDisplayArea.innerText = 'Request sent to agent, check pending trips!'
-   setTimeout(this.clearFormFields, 1000);
+   setTimeout(this.clearFormFields, 2000);
  },
 
  clearFormFields() {
@@ -138,7 +138,8 @@ displayTrips(traveler) {
    durationInput.value = '';
    numTravelersInput.value = '';
    dropdownMenu.value = '';
-   location.reload();
+   quoteDisplayArea.innerText = '';
+   
  },
 };
 

@@ -16,13 +16,12 @@ const passwordInput = document.querySelector('#password');
 
 
 
-const checkLogin = () => {
-  // event.preventDefault();
+const checkLogin = (event) => {
+  event.preventDefault();
   let validInput;
   let username = usernameInput.value
   let userID = username.slice(8);
   const password = passwordInput.value;
-  // apiCalls.getData();
   onStartup();
   if (password.value !== 'travel2020' || !username || 
       !username.includes('traveler') || username.length < 9) {
@@ -67,6 +66,7 @@ const checkForm = event => {
 const handleTripRequest = () => {
   domUpdates.sendTripRequest()
   bookingButton.classList.add('hidden');
+  formButton.classList.remove('hidden');
 }
 
 
