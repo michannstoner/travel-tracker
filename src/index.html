@@ -13,7 +13,7 @@
   <body>
     <nav class='nav-section'>
       <h1 class='page-title'>Away</h1>
-      <div class='login-container'>
+      <div class='login-container' id='loginContainer'>
         <label for='username' class='login-label'>username:
           <input type='text' placeholder='username' id='username'>
         </label>
@@ -21,8 +21,9 @@
           <input type='text' placeholder='password' id='password'>
         </label>
         <button class='login-button' id='loginButton'>GO!</button>
+        <p class='login-error hidden' id='loginError'>Please enter a valid username or password</p>
       </div>
-      <div class='greeting-container hidden'>
+      <div class='greeting-container hidden' id='greetingContainer'>
         <div class='welcome-container' id='welcomeContainer'>  
         </div>
         <div class='cost-container' id='costContainer'>
@@ -30,7 +31,7 @@
         </div>
       </div>
     </nav>
-    <main class='main-container hidden'>
+    <main class='main-container hidden' id='mainContainer'>
       <section class='booking-container hidden'>
         <h2>where to next?</h2>
           <label for='start-date' class='start-date-label'>start date:<br>
@@ -49,7 +50,7 @@
           <button class='submit-form' id='submitForm'>Get a Quote</button>
         <div class='booking-area hidden'>
           <p class='price-quote'>Your Trip Quote</p>
-          <button class='booking-button class'>Click to Get Away!</button>
+          <button class='booking-button' id='bookingButton'>Click to Get Away!</button>
         </div>
       </section>
       <!-- <div class='separator'></div> -->
