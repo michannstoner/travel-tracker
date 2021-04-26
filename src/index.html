@@ -13,15 +13,16 @@
   <body>
     <nav class='nav-section'>
       <h1 class='page-title'>Away</h1>
-      <div class='login-container hidden'>
+      <div class='login-container'>
         <label for='username' class='login-label'>username:
           <input type='text' placeholder='username' id='username'>
         </label>
         <label for='password' class='login-label'>password:
           <input type='text' placeholder='password' id='password'>
         </label>
+        <button class='login-button' id='loginButton'>GO!</button>
       </div>
-      <div class='greeting-container'>
+      <div class='greeting-container hidden'>
         <div class='welcome-container' id='welcomeContainer'>  
         </div>
         <div class='cost-container' id='costContainer'>
@@ -29,28 +30,28 @@
         </div>
       </div>
     </nav>
-    <main class='main-container'>
-      <div class='booking-container'>
+    <main class='main-container hidden'>
+      <section class='booking-container hidden'>
         <h2>where to next?</h2>
-        <label for='start-date' class='start-date-label'>start date:<br>
+          <label for='start-date' class='start-date-label'>start date:<br>
           <input type='date' class='start-date' id='startDate' aria-required='true'>
-        </label>
-        <label for='duration' class='duration-label'>duration (days):<br>
+         </label>
+          <label for='duration' class='duration-label'>duration (days):<br>
           <input type='number' min='1' class='duration' id='duration' aria-required='true'>
-        </label>
-        <label for='num-travelers' class='travelers-label'>number of travelers:<br>
+          </label>
+         <label for='num-travelers' class='travelers-label'>number of travelers:<br>
           <input type='number' min='1' class='num-travelers' id='numberOfTravelers' aria-required='true'>
-        </label>
-        <label for='destination-dropdown' class='dropdown-list'>pick a destination:<br>
+          </label>
+         <label for='destination-dropdown' class='dropdown-list'>pick a destination:<br>
           <select name='destinations' class='destination' id='destinationDropdown' aria-required='true'></select>
-        </label>
-        <p class='error-message hidden'>Please fill out all fields and select a valid start date</p>
-        <button class='submit-form' id='submitForm'>Get a Quote</button>
+          </label>
+          <p class='error-message hidden'>Please fill out all fields and select a valid start date</p>
+          <button class='submit-form' id='submitForm'>Get a Quote</button>
         <div class='booking-area hidden'>
           <p class='price-quote'>Your Trip Quote</p>
           <button class='booking-button class'>Click to Get Away!</button>
         </div>
-      </div>
+      </section>
       <!-- <div class='separator'></div> -->
       <section class='trip-container'>
         <h2 class='trip-header'>Your Trips</h2>

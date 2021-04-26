@@ -37,6 +37,10 @@ nav {
   position: relative;
 } 
 
+.login-display {
+  margin-top: 150px;
+}
+
 /* TRIP CONTAINER */
 .trip-container {
   @include dimensions(60vh, 80%);
