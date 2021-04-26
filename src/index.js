@@ -1,13 +1,11 @@
 import './css/base.scss';
-// import main from './css/main.scss';
 import apiCalls from './api-calls.js';
 import domUpdates from './dom-updates.js';
 import Traveler from './Traveler';
-let currentTraveler, travelerData, tripData, destinationData;
 
+let currentTraveler, travelerData, tripData, destinationData;
 const formButton = document.querySelector('#submitForm');
 const bookingButton = document.querySelector('.booking-button');
-
 
 
 window.addEventListener('load', onStartup);
@@ -15,7 +13,7 @@ formButton.addEventListener('click', checkForm);
 bookingButton.addEventListener('click', handleTripRequest);
 
 
-function onStartup() {
+const onStartup = () => {
   apiCalls.getData()
   .then(allData => {
     travelerData = allData[0].travelers;
@@ -29,7 +27,8 @@ function onStartup() {
   });
 }
 
-function checkForm(event) {
+
+const checkForm = (event) => {
   event.preventDefault();
   if (domUpdates.checkValidation()) {
     formButton.classList.add('hidden');
@@ -37,7 +36,7 @@ function checkForm(event) {
   }
 }
 
-function handleTripRequest() {
+const handleTripRequest = () => {
   domUpdates.sendTripRequest()
   bookingButton.classList.add('hidden');
 }
