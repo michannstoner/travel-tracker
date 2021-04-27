@@ -23,30 +23,9 @@ const firstName = name[0];
 greetingArea.innerText = `Welcome, ${firstName}!`;
 },
 
-displayTrips(traveler) {
+displayAllTrips(traveler) {
   tripDisplayArea.innerHTML = '';
-  let tripInfo = '';
-  if (traveler.tripData.length > 0) {
-    traveler.tripData.forEach(trip => {
-      tripInfo += `
-      <article class='card'>
-       <div class=img-container>
-          <img class='destination-img' src='${trip.destination.image}' alt=${trip.destination.alt}/>
-       </div>
-       <h3 class='trip-title'>${trip.destination.destination}</h3>
-       <p class='trip-info'>
-        date: ${trip.date}<br>
-          travelers: ${trip.travelers}<br>
-          duration: ${trip.duration} days<br>
-          lodging cost: $${trip.destination.estimatedLodgingCostPerDay} per day<br>
-          flight per person: $${trip.destination.estimatedFlightCostPerPerson}<br>
-          status: ${trip.status}
-       </p>
-     </article>
-   `
-    })
-  }
-  tripDisplayArea.insertAdjacentHTML('beforeend', tripInfo);
+  this.createTripCards(traveler.tripData);
  },
 
  displayYearlySpending(traveler) {
@@ -146,29 +125,35 @@ displayTrips(traveler) {
    let tripInfo = '';
    const pendingTrips = traveler.tripData.filter(trip => trip.status === 'pending');
    if (pendingTrips.length > 0) {
-    let tripsToDisplay = pendingTrips.forEach(trip => {
-      tripInfo += `
-      <article class='card'>
-       <div class=img-container>
-          <img class='destination-img' src='${trip.destination.image}' alt=${trip.destination.alt}/>
-       </div>
-       <h3 class='trip-title'>${trip.destination.destination}</h3>
-       <p class='trip-info'>
-        date: ${trip.date}<br>
-          travelers: ${trip.travelers}<br>
-          duration: ${trip.duration} days<br>
-          lodging cost: $${trip.destination.estimatedLodgingCostPerDay} per day<br>
-          flight per person: $${trip.destination.estimatedFlightCostPerPerson}<br>
-          status: ${trip.status}
-       </p>
-     </article>
-   `
-    })
-    tripDisplayArea.insertAdjacentHTML('beforeend', tripInfo);
+     this.createTripCards(pendingTrips);
   } else {
      tripDisplayArea.innerText = 'No pending trips, time to book!';
    }
  },
+
+ createTripCards(tripsToDisplay) {
+  let tripInfo = '';
+  let trips = tripsToDisplay.forEach(trip => {
+    tripInfo += `
+    <article class='card'>
+     <div class=img-container>
+        <img class='destination-img' src='${trip.destination.image}' alt=${trip.destination.alt}/>
+     </div>
+     <h3 class='trip-title'>${trip.destination.destination}</h3>
+     <p class='trip-info'>
+      date: ${trip.date}<br>
+        travelers: ${trip.travelers}<br>
+        duration: ${trip.duration} days<br>
+        lodging cost: $${trip.destination.estimatedLodgingCostPerDay} per day<br>
+        flight per person: $${trip.destination.estimatedFlightCostPerPerson}<br>
+        status: ${trip.status}
+     </p>
+   </article>
+ `
+  })
+ tripDisplayArea.insertAdjacentHTML('beforeend', tripInfo);
+ },
+
 };
 
 export default domUpdates;

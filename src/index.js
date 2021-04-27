@@ -4,6 +4,7 @@ import domUpdates from './dom-updates.js';
 import Traveler from './Traveler';
 
 let currentTraveler, travelerData, tripData, destinationData;
+const allTripsButton = document.querySelector('#allTrips');
 const bookingButton = document.querySelector('#bookingButton');
 const formButton = document.querySelector('#submitForm');
 const greetingContainer = document.querySelector('#greetingContainer');
@@ -71,8 +72,13 @@ const viewPendingTrips = () => {
   domUpdates.changeToPendingTripView(currentTraveler);
 }
 
+const viewAllTrips = () => {
+  domUpdates.displayAllTrips(currentTraveler);
+}
+
 loginButton.addEventListener('click', checkLogin);
 window.addEventListener('load', onStartup);
 formButton.addEventListener('click', checkForm);
 bookingButton.addEventListener('click', handleTripRequest);
 pendingButton.addEventListener('click', viewPendingTrips);
+allTripsButton.addEventListener('click', viewAllTrips);
