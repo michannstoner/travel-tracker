@@ -17,7 +17,7 @@ let apiCalls = {
       .then(response => response.json())
       .then(singleTravelerData => singleTravelerData)
     return fetchSingleTraveler;
-  },
+   },
 
   getAllTrips() {
     const fetchAllTrips = fetch('http://localhost:3001/api/v1/trips')
@@ -31,6 +31,18 @@ let apiCalls = {
       .then(response => response.json())
       .then(data => data)
     return fetchAllDestinations
+  },
+
+  postNewTrip(trip) {
+   return fetch('http://localhost:3001/api/v1/trips', {
+      method: 'POST',
+      body: JSON.stringify(trip),
+      headers: {
+        'Content-type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(this.getData())
   },
 
   getData() {

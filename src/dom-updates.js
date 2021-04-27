@@ -102,13 +102,7 @@ let domUpdates = {
   },
 
   sendTripRequest() {
-    fetch('http://localhost:3001/api/v1/trips', {
-      method: 'Post',
-      body: JSON.stringify(newTrip),
-      headers: {
-        'Content-type': 'application/json'
-      }
-    })
+    apiCalls.postNewTrip(newTrip)
     quoteDisplayArea.innerText = 'Request sent to agent, check pending trips!'
     setTimeout(this.clearFormFields, 3000);
   },
