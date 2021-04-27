@@ -20,6 +20,7 @@ let apiCalls = {
         } 
        return response.json()})
       .then(singleTravelerData => singleTravelerData)
+      .catch(err => console.log(err))
     return fetchSingleTraveler;
    },
 
@@ -31,6 +32,7 @@ let apiCalls = {
         }
        return response.json()})
       .then(data => data)
+      .catch(err => console.log(err))
     return fetchAllTrips; 
   },
 
@@ -42,6 +44,7 @@ let apiCalls = {
         }
         return response.json()})
       .then(data => data)
+      .catch(err => console.log(err))
     return fetchAllDestinations
   },
 
@@ -59,12 +62,13 @@ let apiCalls = {
       }
       return response.json()})
     .then(this.getData())
+    .catch(err => console.log(err))
   },
 
   getData() {
     return Promise.all([this.getAllTravelers(), this.getAllTrips(), this.getAllDestinations(), this.getSingleTraveler()])
       .then(data => data)
-      .catch(err => console.log('Oops, something went wrong'))
+      .catch(err => console.log(err))
   },
 }
 
