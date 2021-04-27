@@ -150,7 +150,8 @@ let domUpdates = {
   },
 
   displayFetchError(message) {
-    fetchErrorArea.innerText = message;
+    tripDisplayArea.innerHTML = '';
+    tripDisplayArea.innerText = message;
   }
 };
 
