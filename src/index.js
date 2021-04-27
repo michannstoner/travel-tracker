@@ -32,18 +32,7 @@ const checkLogin = (event) => {
       mainContainer.classList.remove('hidden');
       greetingContainer.classList.remove('hidden');
   }
-
-  // if (validInput) {
-  }
-  // if (password.value !== 'travel2020' || !username.includes('traveler') || username.length < 9) {
-  //     loginError.classList.remove('hidden');
-  //     createUser(userID);
-  //     displayUser();
-  //     loginContainer.classList.add('hidden');
-  //     mainContainer.classList.remove('hidden');
-  //     greetingContainer.classList.remove('hidden');
-  
-
+}
 
 const createUser = id => {
   currentTraveler = new Traveler(travelerData[id], tripData, destinationData);
@@ -80,13 +69,7 @@ const handleTripRequest = () => {
   formButton.classList.remove('hidden');
 }
 
-
 loginButton.addEventListener('click', checkLogin);
 window.addEventListener('load', onStartup);
 formButton.addEventListener('click', checkForm);
 bookingButton.addEventListener('click', handleTripRequest);
-
-
-
-
-
