@@ -14,6 +14,7 @@ html {
   align-content: center;
   margin-right: 15px;
   margin-top: 2.5%;
+
 }
 
 .login-label {
@@ -35,7 +36,7 @@ nav {
   @include flex(row);
   @include justify(space-between);
   align-items: center;
-  @include dimensions(15vh, 100%);
+  @include dimensions(18vh, 100vw);
   position: absolute;
 }
 
@@ -90,6 +91,52 @@ nav {
   @include dimensions(20vh, 20vw);
   overflow: hidden;
   background-size: contain;
+}
+
+@media only screen and (max-width: 375px) {
+  nav {
+    width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  .all-container {
+    @include flex(column);
+  }
+
+  .booking-container,
+  .trip-container {
+    margin: auto;
+  }
+  
+  .login-container {
+    @include flex(column);
+    justify-content: space-evenly;
+    @include dimensions(10vh, 50vw);
+  }
+
+  .card-container {
+    @include flex(column);
+    justify-content: space-evenly;
+    align-content: center;
+    margin: auto;
+  }
+
+  .card {
+    @include dimensions(50vh, 90vw);
+  }
+
+  .img-container {
+    @include dimensions(auto, 90vw);
+  }
+
+  .destination-img {
+    @include dimensions(auto, 90vw);
+  }
+
+  .hidden {
+    display: none !important;
+  }
 }
 
 
