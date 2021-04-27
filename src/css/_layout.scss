@@ -37,6 +37,10 @@ nav {
   position: relative;
 } 
 
+.login-display {
+  margin-top: 150px;
+}
+
 /* TRIP CONTAINER */
 .trip-container {
   @include dimensions(60vh, 80%);
@@ -60,6 +64,7 @@ nav {
 .card {
   @include dimensions(50vh, auto);
   @include flex(column);
+  background-color: $nav-background;
   border: 2px solid #e5e5e5;
   margin-top: 4%;
 }
