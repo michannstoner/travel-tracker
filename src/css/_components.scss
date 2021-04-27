@@ -41,13 +41,15 @@ button {
   }
 }
 
-.submit-form {
+.submit-form,
+.booking-button {
   @include dimensions(6vh, 100%)
 }
 
 .pending, 
 .active,
-.all-trips {
+.all-trips,
+.login-button {
   @include dimensions(6vh, 15%);
   // border-radius: 12px;
   margin: auto;
