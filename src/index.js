@@ -36,7 +36,6 @@ const checkLogin = (event) => {
 
 const createUser = id => {
   currentTraveler = new Traveler(travelerData[id], tripData, destinationData);
-  console.log(currentTraveler);
 }
 
 const displayUser = () => {
