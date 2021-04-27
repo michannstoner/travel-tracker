@@ -2,8 +2,8 @@ import Traveler from "./Traveler";
 import apiCalls from './api-calls.js';
 import tripData from './index.js';
 import TripRepo from "./Trip-Repo";
-let newTrip;
 
+let newTrip;
 const bookingDisplayArea = document.querySelector('.booking-area');
 const costDisplayArea = document.querySelector('#costContainer');
 const dropdownMenu = document.querySelector('#destinationDropdown');
@@ -98,7 +98,7 @@ displayTrips(traveler) {
  createNewTripRequest(traveler, tripData, destinationData) {
   const travelDate = new Date(startDateInput.value);
   const dateForRequest = `${travelDate.getFullYear()}/${travelDate.getMonth() + 1}/${travelDate.getDate()}`
-  const matchingDestination = destinationData.filter(destination => destination.destination === dropdownMenu.value)
+  const matchingDestination = destinationData.filter(destination => destination.destination === dropdownMenu.value);
 
   let tripRequest = {
     id: Date.now(),
@@ -130,7 +130,7 @@ displayTrips(traveler) {
      }
    })
    quoteDisplayArea.innerText = 'Request sent to agent, check pending trips!'
-   setTimeout(this.clearFormFields, 2000);
+   setTimeout(this.clearFormFields, 3000);
  },
 
  clearFormFields() {
@@ -139,7 +139,35 @@ displayTrips(traveler) {
    numTravelersInput.value = '';
    dropdownMenu.value = '';
    quoteDisplayArea.innerText = '';
-   
+ },
+
+ changeToPendingTripView(traveler) {
+   tripDisplayArea.innerHTML = '';
+   let tripInfo = '';
+   const pendingTrips = traveler.tripData.filter(trip => trip.status === 'pending');
+   if (pendingTrips.length > 0) {
+    let tripsToDisplay = pendingTrips.forEach(trip => {
+      tripInfo += `
+      <article class='card'>
+       <div class=img-container>
+          <img class='destination-img' src='${trip.destination.image}' alt=${trip.destination.alt}/>
+       </div>
+       <h3 class='trip-title'>${trip.destination.destination}</h3>
+       <p class='trip-info'>
+        date: ${trip.date}<br>
+          travelers: ${trip.travelers}<br>
+          duration: ${trip.duration} days<br>
+          lodging cost: $${trip.destination.estimatedLodgingCostPerDay} per day<br>
+          flight per person: $${trip.destination.estimatedFlightCostPerPerson}<br>
+          status: ${trip.status}
+       </p>
+     </article>
+   `
+    })
+    tripDisplayArea.insertAdjacentHTML('beforeend', tripInfo);
+  } else {
+     tripDisplayArea.innerText = 'No pending trips, time to book!';
+   }
  },
 };
 

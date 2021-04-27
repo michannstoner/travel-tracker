@@ -11,8 +11,9 @@ const loginButton = document.querySelector('#loginButton');
 const loginContainer = document.querySelector('#loginContainer')
 const loginError = document.querySelector('#loginError');
 const mainContainer = document.querySelector('#mainContainer');
-const usernameInput = document.querySelector('#username');
 const passwordInput = document.querySelector('#password');
+const pendingButton = document.querySelector('#pending');
+const usernameInput = document.querySelector('#username');
 
 
 
@@ -66,7 +67,12 @@ const handleTripRequest = () => {
   formButton.classList.remove('hidden');
 }
 
+const viewPendingTrips = () => {
+  domUpdates.changeToPendingTripView(currentTraveler);
+}
+
 loginButton.addEventListener('click', checkLogin);
 window.addEventListener('load', onStartup);
 formButton.addEventListener('click', checkForm);
 bookingButton.addEventListener('click', handleTripRequest);
+pendingButton.addEventListener('click', viewPendingTrips);
