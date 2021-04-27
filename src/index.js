@@ -21,18 +21,29 @@ const checkLogin = (event) => {
   let validInput;
   let username = usernameInput.value
   let userID = username.slice(8);
-  const password = passwordInput.value;
+  // const password = passwordInput.value;
   onStartup();
-  if (password.value !== 'travel2020' || !username || 
-      !username.includes('traveler') || username.length < 9) {
+  if (passwordInput.value !== 'travel2020' || !passwordInput.value ||   !usernameInput.value || username.length < 9) {
       loginError.classList.remove('hidden');
+  } else {
       createUser(userID);
       displayUser();
       loginContainer.classList.add('hidden');
       mainContainer.classList.remove('hidden');
       greetingContainer.classList.remove('hidden');
-  } 
-}
+  }
+
+  // if (validInput) {
+  }
+  // if (password.value !== 'travel2020' || !username.includes('traveler') || username.length < 9) {
+  //     loginError.classList.remove('hidden');
+  //     createUser(userID);
+  //     displayUser();
+  //     loginContainer.classList.add('hidden');
+  //     mainContainer.classList.remove('hidden');
+  //     greetingContainer.classList.remove('hidden');
+  
+
 
 const createUser = id => {
   currentTraveler = new Traveler(travelerData[id], tripData, destinationData);
