@@ -9,6 +9,7 @@ const costDisplayArea = document.querySelector('#costContainer');
 const dropdownMenu = document.querySelector('#destinationDropdown');
 const durationInput = document.querySelector('#duration');
 const errorMessage = document.querySelector('.error-message');
+const fetchErrorArea = document.querySelector('#fetchError');
 const greetingArea = document.querySelector('#welcomeContainer');
 const numTravelersInput = document.querySelector('#numberOfTravelers');
 const startDateInput = document.querySelector('#startDate');
@@ -152,6 +153,10 @@ let domUpdates = {
     })
     tripDisplayArea.insertAdjacentHTML('beforeend', tripInfo);
   },
+
+  displayFetchError(message) {
+    fetchErrorArea.innerText = message;
+  }
 };
 
 export default domUpdates;
