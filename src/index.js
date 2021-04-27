@@ -18,19 +18,17 @@ const passwordInput = document.querySelector('#password');
 
 const checkLogin = (event) => {
   event.preventDefault();
-  let validInput;
   let username = usernameInput.value
   let userID = username.slice(8);
-  // const password = passwordInput.value;
   onStartup();
-  if (passwordInput.value !== 'travel2020' || !passwordInput.value ||   !usernameInput.value || username.length < 9) {
-      loginError.classList.remove('hidden');
+  if (passwordInput.value !== 'travel2020' || !passwordInput.value || !username || username.length < 9) {
+    loginError.classList.remove('hidden');
   } else {
-      createUser(userID);
-      displayUser();
-      loginContainer.classList.add('hidden');
-      mainContainer.classList.remove('hidden');
-      greetingContainer.classList.remove('hidden');
+    createUser(userID);
+    displayUser();
+    loginContainer.classList.add('hidden');
+    mainContainer.classList.remove('hidden');
+    greetingContainer.classList.remove('hidden');
   }
 }
 
@@ -47,11 +45,11 @@ const displayUser = () => {
 
 const onStartup = () => {
   apiCalls.getData()
-  .then(allData => {
-    travelerData = allData[0].travelers;
-    tripData = allData[1].trips;
-    destinationData = allData[2].destinations; 
-  });
+    .then(allData => {
+      travelerData = allData[0].travelers;
+      tripData = allData[1].trips;
+      destinationData = allData[2].destinations; 
+    });
 }
 
 const checkForm = event => {
