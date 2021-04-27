@@ -35,15 +35,21 @@ button {
   &:hover {
     background-color: #81b29a;
   }
+
+  &:active {
+    background-color: #81b29a;
+  }
 }
 
-.submit-form {
+.submit-form,
+.booking-button {
   @include dimensions(6vh, 100%)
 }
 
 .pending, 
 .active,
-.all-trips {
+.all-trips,
+.login-button {
   @include dimensions(6vh, 15%);
   // border-radius: 12px;
   margin: auto;

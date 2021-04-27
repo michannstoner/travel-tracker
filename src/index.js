@@ -2,8 +2,10 @@ import './css/base.scss';
 import apiCalls from './api-calls.js';
 import domUpdates from './dom-updates.js';
 import Traveler from './Traveler';
+export { onStartup }
 
 let currentTraveler, travelerData, tripData, destinationData;
+const allTripsButton = document.querySelector('#allTrips');
 const bookingButton = document.querySelector('#bookingButton');
 const formButton = document.querySelector('#submitForm');
 const greetingContainer = document.querySelector('#greetingContainer');
@@ -11,8 +13,9 @@ const loginButton = document.querySelector('#loginButton');
 const loginContainer = document.querySelector('#loginContainer')
 const loginError = document.querySelector('#loginError');
 const mainContainer = document.querySelector('#mainContainer');
-const usernameInput = document.querySelector('#username');
 const passwordInput = document.querySelector('#password');
+const pendingButton = document.querySelector('#pending');
+const usernameInput = document.querySelector('#username');
 
 
 
@@ -38,7 +41,7 @@ const createUser = id => {
 
 const displayUser = () => {
   domUpdates.greetUser(currentTraveler);
-  domUpdates.displayTrips(currentTraveler);
+  domUpdates.displayAllTrips(currentTraveler);
   domUpdates.displayYearlySpending(currentTraveler);
   domUpdates.getDestinationsInDropdown(destinationData);
 }
@@ -61,12 +64,26 @@ const checkForm = event => {
 }
 
 const handleTripRequest = () => {
-  domUpdates.sendTripRequest()
+  domUpdates.sendTripRequest(currentTraveler);
+  onStartup();
+  displayUser();
   bookingButton.classList.add('hidden');
   formButton.classList.remove('hidden');
+}
+
+const viewPendingTrips = () => {
+  onStartup();
+  displayUser();
+  domUpdates.changeToPendingTripView(currentTraveler);
+}
+
+const viewAllTrips = () => {
+  domUpdates.displayAllTrips(currentTraveler);
 }
 
 loginButton.addEventListener('click', checkLogin);
 window.addEventListener('load', onStartup);
 formButton.addEventListener('click', checkForm);
 bookingButton.addEventListener('click', handleTripRequest);
+pendingButton.addEventListener('click', viewPendingTrips);
+allTripsButton.addEventListener('click', viewAllTrips);

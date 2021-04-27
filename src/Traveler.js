@@ -24,7 +24,7 @@ class Traveler {
       let travelDates = trip.date;
       if (new Date(travelDates).getFullYear() === 2021) {
         return trip;
-      }
+      } 
     });
     const totalYearSpent = yearlyTripCost.reduce((total, curTrip) => {
       total += curTrip.calculateTripCost();
