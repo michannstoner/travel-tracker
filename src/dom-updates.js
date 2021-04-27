@@ -102,8 +102,9 @@ let domUpdates = {
     quoteDisplayArea.innerText = `Estimated trip cost: $${tripCost}`
   },
 
-  sendTripRequest() {
+  sendTripRequest(traveler) {
     apiCalls.postNewTrip(newTrip)
+    traveler.tripData.push(newTrip);
     quoteDisplayArea.innerText = 'Request sent to agent, check pending trips!'
     setTimeout(this.clearFormFields, 3000);
   },

@@ -64,12 +64,16 @@ const checkForm = event => {
 }
 
 const handleTripRequest = () => {
-  domUpdates.sendTripRequest()
+  domUpdates.sendTripRequest(currentTraveler);
+  onStartup();
+  displayUser();
   bookingButton.classList.add('hidden');
   formButton.classList.remove('hidden');
 }
 
 const viewPendingTrips = () => {
+  onStartup();
+  displayUser();
   domUpdates.changeToPendingTripView(currentTraveler);
 }
 
