@@ -3,7 +3,11 @@ import domUpdates from "./dom-updates";
 let apiCalls = {
   getAllTravelers() {
     const fetchAllTravelers = fetch('http://localhost:3001/api/v1/travelers')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          domUpdates.displayFetchError('We\'re experiencing issues, please check back later');
+        }
+      return response.json()})
       .then(data => data)
     return fetchAllTravelers;
   },
