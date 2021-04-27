@@ -14,21 +14,33 @@ let apiCalls = {
 
   getSingleTraveler() {
     const fetchSingleTraveler = fetch('http://localhost:3001/api/v1/travelers/1')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          domUpdates.displayFetchError('We\'re experiencing issues, please check back later')
+        } 
+       return response.json()})
       .then(singleTravelerData => singleTravelerData)
     return fetchSingleTraveler;
    },
 
   getAllTrips() {
     const fetchAllTrips = fetch('http://localhost:3001/api/v1/trips')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          domUpdates.displayFetchError('We\'re experiencing issues, please check back later')
+        }
+       return response.json()})
       .then(data => data)
     return fetchAllTrips; 
   },
 
   getAllDestinations() {
     const fetchAllDestinations = fetch('http://localhost:3001/api/v1/destinations')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          domUpdates.displayFetchError('We\'re experiencing issues, please check back later')
+        }
+        return response.json()})
       .then(data => data)
     return fetchAllDestinations
   },
@@ -41,7 +53,11 @@ let apiCalls = {
         'Content-type': 'application/json'
       }
     })
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        domUpdates.displayFetchError('We\'re experiencing issues, please contact agent to book')
+      }
+      return response.json()})
     .then(this.getData())
   },
 
