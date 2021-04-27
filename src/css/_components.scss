@@ -48,11 +48,16 @@ button {
 
 .pending, 
 .active,
-.all-trips,
-.login-button {
+.all-trips {
   @include dimensions(6vh, 15%);
   // border-radius: 12px;
   margin: auto;
+}
+
+.login-button {
+  @include dimensions(3vh, 10%);
+  margin-left: 5px;
+  border-radius: 3px;
 }
 
 .pending {
