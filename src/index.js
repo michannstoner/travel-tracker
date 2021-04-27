@@ -39,7 +39,7 @@ const createUser = id => {
 
 const displayUser = () => {
   domUpdates.greetUser(currentTraveler);
-  domUpdates.displayTrips(currentTraveler);
+  domUpdates.displayAllTrips(currentTraveler);
   domUpdates.displayYearlySpending(currentTraveler);
   domUpdates.getDestinationsInDropdown(destinationData);
 }
