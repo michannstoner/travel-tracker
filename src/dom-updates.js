@@ -50,7 +50,7 @@ let domUpdates = {
     const dateValue = new Date(startDateInput.value).toString();
     const currentDate = new Date().toString();
 
-    if (startDateInput.value !== dateValue || dateValue < currentDate) {
+    if (startDateInput.value !== dateValue || startDateInput.value < currentDate) {
       errorMessage.classList.remove('hidden');
     } else {
       validForm = true;
