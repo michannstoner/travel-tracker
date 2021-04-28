@@ -9,11 +9,14 @@ Away is the start of a travel tracker application. As a user, you will be prompt
 ### Login View 
 ![](https://media.giphy.com/media/tR8lV4g0bgLiUJa3iU/giphy.gif)
 
-### Dashboard View 
-- photos/gifs
+### Dashboard View / Book a Trip
+![](https://media.giphy.com/media/s3BLLdZzZULWzg8DZg/giphy.gif)
+
+### Filter Trips by Status 
+![](https://media.giphy.com/media/susnaVI5yLZAUNiMzo/giphy.gif)
 
 ### Mobile View/Responsive 
-- photos/gifs 
+![](https://media.giphy.com/media/IiIIQftTB1gf3V6G40/giphy.gif)
 
 ### Setup 
 1. `git clone` this repository
