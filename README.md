@@ -7,7 +7,7 @@ Away is the start of a travel tracker application. As a user, you will be prompt
 
 
 ### Login View 
-- photos/gifs 
+![](https://media.giphy.com/media/tR8lV4g0bgLiUJa3iU/giphy.gif)
 
 ### Dashboard View 
 - photos/gifs
