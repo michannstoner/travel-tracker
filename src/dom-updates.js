@@ -2,7 +2,6 @@ import Traveler from "./Traveler";
 import apiCalls from './api-calls.js';
 import tripData from './index.js';
 import TripRepo from "./Trip-Repo";
-import { onStartup } from './index'
 
 let newTrip;
 const bookingDisplayArea = document.querySelector('.booking-area');
