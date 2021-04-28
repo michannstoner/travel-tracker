@@ -89,12 +89,21 @@ nav {
   background-color: $nav-background;
   border: 2px solid #e5e5e5;
   margin-top: 4%;
+  justify-content: space-between
 }
 
 .trip-info,
 .trip-title {
   @include flex(column);
   padding: 3%;
+}
+
+.trip-title {
+  font-size: 150%;
+}
+
+.trip-info {
+  font-size: 125%;
 }
 
 .destination-img {
