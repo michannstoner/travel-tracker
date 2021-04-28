@@ -137,12 +137,12 @@ let domUpdates = {
         </div>
         <h3 class='trip-title'>${trip.destination.destination}</h3>
         <p class='trip-info'>
-        date: ${trip.date}<br>
-        travelers: ${trip.travelers}<br>
-        duration: ${trip.duration} days<br>
-        lodging cost: $${trip.destination.estimatedLodgingCostPerDay} per day<br>
-        flight per person: $${trip.destination.estimatedFlightCostPerPerson}<br>
-        status: ${trip.status}
+        Date: ${trip.date}<br>
+        Travelers: ${trip.travelers}<br>
+        Duration: ${trip.duration} days<br>
+        Lodging cost: $${trip.destination.estimatedLodgingCostPerDay} per day<br>
+        Flight per person: $${trip.destination.estimatedFlightCostPerPerson}<br>
+        Status: ${trip.status}
         </p>
       </article>
     `

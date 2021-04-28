@@ -5,6 +5,7 @@ import Traveler from './Traveler';
 export { onStartup }
 
 let currentTraveler, travelerData, tripData, destinationData;
+const allContainer = document.querySelector('.all-container');
 const allTripsButton = document.querySelector('#allTrips');
 const bookingButton = document.querySelector('#bookingButton');
 const formButton = document.querySelector('#submitForm');
@@ -18,7 +19,6 @@ const pendingButton = document.querySelector('#pending');
 const usernameInput = document.querySelector('#username');
 
 
-
 const checkLogin = (event) => {
   event.preventDefault();
   let username = usernameInput.value
@@ -30,7 +30,7 @@ const checkLogin = (event) => {
     createUser(userID);
     displayUser();
     loginContainer.classList.add('hidden');
-    mainContainer.classList.remove('hidden');
+    allContainer.classList.remove('hidden');
     greetingContainer.classList.remove('hidden');
   }
 }

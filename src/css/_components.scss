@@ -1,6 +1,5 @@
 * {
   font-family: $font-style;
-  // border: 1px solid red;
 }
 
 h2 {
@@ -22,6 +21,19 @@ h2 {
     font-family: $accent-font;
     font-size: 2em;
   }
+}
+
+.form {
+  font-size: 100%;
+  font-weight: 900;
+}
+
+.trip-title {
+  font-size: 125%;
+}
+
+.trip-info {
+  font-size: 110%;
 }
 
 /* BUTTONS */
@@ -48,11 +60,15 @@ button {
 
 .pending, 
 .active,
-.all-trips,
-.login-button {
+.all-trips {
   @include dimensions(6vh, 15%);
-  // border-radius: 12px;
   margin: auto;
+}
+
+.login-button {
+  @include dimensions(3vh, 10%);
+  margin-left: 5px;
+  border-radius: 3px;
 }
 
 .pending {
@@ -69,4 +85,16 @@ button {
 .num-travelers,
 .destination {
   @include dimensions(3vh, 100%);
+}
+
+@media only screen and (max-width: 375px) {
+  .login-button {
+    @include dimensions(3vh, 40vw);
+    align-self: center;
+    margin-top: 8px;
+  }
+
+  .welcome-container {
+    font-size: 0.5em;
+  }
 }
