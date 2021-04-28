@@ -2,7 +2,6 @@ import Traveler from "./Traveler";
 import apiCalls from './api-calls.js';
 import tripData from './index.js';
 import TripRepo from "./Trip-Repo";
-import { onStartup } from './index'
 
 let newTrip;
 const bookingDisplayArea = document.querySelector('.booking-area');
@@ -10,7 +9,6 @@ const costDisplayArea = document.querySelector('#costContainer');
 const dropdownMenu = document.querySelector('#destinationDropdown');
 const durationInput = document.querySelector('#duration');
 const errorMessage = document.querySelector('.error-message');
-const fetchErrorArea = document.querySelector('#fetchError');
 const greetingArea = document.querySelector('#welcomeContainer');
 const numTravelersInput = document.querySelector('#numberOfTravelers');
 const startDateInput = document.querySelector('#startDate');
@@ -52,7 +50,7 @@ let domUpdates = {
     const dateValue = new Date(startDateInput.value).toString();
     const currentDate = new Date().toString();
 
-    if (startDateInput.value !== dateValue || dateValue < currentDate) {
+    if (startDateInput.value !== dateValue || startDateInput.value < currentDate) {
       errorMessage.classList.remove('hidden');
     } else {
       validForm = true;
