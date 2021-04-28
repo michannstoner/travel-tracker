@@ -13,7 +13,6 @@ const greetingContainer = document.querySelector('#greetingContainer');
 const loginButton = document.querySelector('#loginButton');
 const loginContainer = document.querySelector('#loginContainer')
 const loginError = document.querySelector('#loginError');
-const mainContainer = document.querySelector('#mainContainer');
 const passwordInput = document.querySelector('#password');
 const pendingButton = document.querySelector('#pending');
 const usernameInput = document.querySelector('#username');
