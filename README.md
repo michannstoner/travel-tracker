@@ -16,7 +16,7 @@ Away is the start of a travel tracker application. As a user, you will be prompt
 ![](https://media.giphy.com/media/susnaVI5yLZAUNiMzo/giphy.gif)
 
 ### Mobile View/Responsive 
-![](https://media.giphy.com/media/IiIIQftTB1gf3V6G40/giphy.gif)
+![](https://media.giphy.com/media/i1QhQmlurVwql4N0c3/giphy.gif)
 
 ### Setup 
 1. `git clone` this repository
