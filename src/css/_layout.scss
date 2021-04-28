@@ -14,11 +14,14 @@ html {
   align-content: center;
   margin-right: 15px;
   margin-top: 2.5%;
-
 }
 
 .login-label {
   margin-left: 8px;
+}
+
+.all-container {
+  display: flex;
 }
 
 .main-container {
@@ -65,6 +68,10 @@ nav {
   margin-left: 5%;
 }
 
+.button-container {
+  margin-left: 3%;
+}
+
 .card-container {
   @include flex(row);
   @include justify(space-evenly);
@@ -73,6 +80,7 @@ nav {
   align-content: space-evenly;
   min-width: 70vw;
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .card {
@@ -81,6 +89,12 @@ nav {
   background-color: $nav-background;
   border: 2px solid #e5e5e5;
   margin-top: 4%;
+}
+
+.trip-info,
+.trip-title {
+  @include flex(column);
+  padding: 3%;
 }
 
 .destination-img {
@@ -93,52 +107,163 @@ nav {
   background-size: contain;
 }
 
-@media only screen and (max-width: 375px) {
-  nav {
-    width: 100vw;
-    overflow-x: hidden;
-    position: relative;
+@media only screen and (max-width: 1200px) {
+  .login-label {
+    width: 12em;
   }
-  
+
+  .login-container {
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .login-button {
+    width: 20%;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .button-container {
+    display: flex;
+    width: fit-content;
+  }
+
+  .pending,
+  .all-trips {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 10%;
+  }
+
+  .card {
+    @include dimensions (auto, 50vw);
+    align-self: center;
+  }
+
+  .booking-container {
+    @include dimensions(30vh, 30vw);
+  }
+
+  .img-container {
+    @include dimensions(auto, 50vw);
+  }
+
+  .destination-img {
+    @include dimensions(auto, 50vw);
+  }
+
+  .submit-form {
+    margin-top: 3%;
+    height: 3em;
+  }
+}
+
+@media only screen and (max-width: 650px) {
   .all-container {
     @include flex(column);
   }
 
-  .booking-container,
-  .trip-container {
+  .booking-container {
+    @include dimensions(50vh, 50vw);
+    align-self: center; 
+  }
+
+  .card-container {
+    @include dimensions(auto, 80vw);
+    align-items: center;
     margin: auto;
+  }
+
+  .img-container {
+    @include dimensions(auto, 80vw);
+  }
+
+  .destination-img {
+    @include dimensions(auto, 80vw);
+  }
+  
+  .pending, 
+  .all-trips {
+    width: 20vw;
+  }
+
+  .pending {
+    margin-bottom: 1%;
+  }
+
+  .card {
+    width: 80vw;
+  }
+
+  .welcome-container,
+  .cost-container {
+    opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .login-container {
+    @include flex(column);
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10%;
+  }
+
+  .login-button {
+    width: 50%;
+    align-self: center;
+    position: unset;
+    margin-top: 5px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  nav {
+    @include dimensions(30vh, 100%);
+    overflow-x: hidden;
+    position: absolute;
+  }
+
+  body {
+    width: 100%;
   }
   
   .login-container {
     @include flex(column);
-    justify-content: space-evenly;
-    @include dimensions(10vh, 50vw);
+    margin: auto;
   }
-
-  .card-container {
-    @include flex(column);
-    justify-content: space-evenly;
-    align-content: center;
+    
+  .booking-container,
+  .trip-container {
     margin: auto;
   }
 
-  .card {
-    @include dimensions(50vh, 90vw);
+  .booking-container {
+    @include flex(column);
+    justify-content: space-around;
+    align-content: space-between;
   }
 
-  .img-container {
-    @include dimensions(auto, 90vw);
+  .submit-form {
+    margin-top: 5%;
   }
-
-  .destination-img {
-    @include dimensions(auto, 90vw);
+  
+  .card-container {
+    width: 100%;
+    align-self: center;
+    position: unset;
+    margin: auto;
   }
 
   .hidden {
     display: none !important;
   }
 }
-
-
-
-
