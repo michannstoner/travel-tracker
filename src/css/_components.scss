@@ -1,6 +1,5 @@
 * {
   font-family: $font-style;
-  // border: 1px solid red;
 }
 
 h2 {
@@ -50,7 +49,6 @@ button {
 .active,
 .all-trips {
   @include dimensions(6vh, 15%);
-  // border-radius: 12px;
   margin: auto;
 }
 
@@ -74,4 +72,16 @@ button {
 .num-travelers,
 .destination {
   @include dimensions(3vh, 100%);
+}
+
+@media only screen and (max-width: 375px) {
+  .login-button {
+    @include dimensions(3vh, 40vw);
+    align-self: center;
+    margin-top: 8px;
+  }
+
+  .welcome-container {
+    font-size: 0.5em;
+  }
 }
