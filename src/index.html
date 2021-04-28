@@ -14,54 +14,53 @@
     <nav class='nav-section'>
       <h1 class='page-title'>AWAY</h1>
       <div class='login-container' id='loginContainer'>
-        <label for='username' class='login-label'>username:
-          <input type='text' placeholder='username' id='username'>
+        <label for='username' class='login-label'>Username:
+          <input type='text' placeholder='username' class= 'username' id='username'>
         </label>
-        <label for='password' class='login-label'>password:
-          <input type='text' placeholder='password' id='password'>
+        <label for='password' class='login-label'>Password:
+          <input type='text' placeholder='password' class= 'password' id='password'>
         </label>
-        <button class='login-button' id='loginButton'>GO!</button>
-        <p class='login-error hidden' id='loginError'>Please enter a valid username or password</p>
+        <button class='login-button' id='loginButton'>Login!</button>
+        <p class='login-error hidden' id='loginError'>Please enter a valid username or   password</p>
       </div>
       <div class='greeting-container hidden' id='greetingContainer'>
-        <div class='welcome-container' id='welcomeContainer'>  
-        </div>
+        <div class='welcome-container' id='welcomeContainer'></div>
         <div class='cost-container' id='costContainer'>
-          <p class='total-cost'>your trip stats: $500 this year</p>
+          <p class='total-cost'>Amount Spent for Year</p>
         </div>
       </div>
     </nav>
-    <main class='main-container hidden' id='mainContainer'>
-      <section class='booking-container hidden'>
-        <h2>where to next?</h2>
-        <label for='start-date' class='start-date-label'>start date:<br>
-          <input type='date' class='start-date' id='startDate' aria-required='true'>
+    <main class='main-container' id='mainContainer'>
+      <section class='all-container hidden'>
+        <section class='booking-container'>
+          <h2>Where To Next?</h2>
+          <label for='start-date' class='start-date-label'>Start Date:<br>
+            <input type='date' class='start-date' id='startDate' aria-required='true'>
          </label>
-        <label for='duration' class='duration-label'>duration (days):<br>
-          <input type='number' min='1' class='duration' id='duration' aria-required='true'>
+          <label for='duration' class='duration-label'>Duration (days):<br>
+            <input type='number' min='1' class='duration' id='duration' aria-required='true'>
           </label>
-         <label for='num-travelers' class='travelers-label'>number of travelers:<br>
-          <input type='number' min='1' class='num-travelers' id='numberOfTravelers' aria-required='true'>
+          <label for='num-travelers' class='travelers-label'>Number of Travelers:<br>
+            <input type='number' min='1' class='num-travelers' id='numberOfTravelers' aria-required='true'>
           </label>
-         <label for='destination-dropdown' class='dropdown-list'>pick a destination:<br>
-          <select name='destinations' class='destination' id='destinationDropdown' aria-required='true'></select>
+         <label for='destination-dropdown' class='dropdown-list'>Pick a Destination:<br>
+            <select name='destinations' class='destination' id='destinationDropdown' aria-required='true'></select>
           </label>
           <p class='error-message hidden'>Please fill out all fields and select a valid start date</p>
           <button class='submit-form' id='submitForm'>Get a Quote</button>
-        <div class='booking-area hidden'>
-          <p class='price-quote'>Your Trip Quote</p>
-          <button class='booking-button' id='bookingButton'>Click to Get Away!</button>
-        </div>
-      </section>
-      <!-- <div class='separator'></div> -->
-      <section class='trip-container'>
-        <h2 class='trip-header'>Your Trips</h2>
-        <div class=button-container>
-          <button class='all-trips' id='allTrips'>all trips</button>
-          <button class='pending' id='pending'>pending trips</button>
-        </div>
-        <div class='card-container' id='cardContainer'>
-        </div>
+          <div class='booking-area hidden'>
+            <p class='price-quote'>Your Trip Quote</p>
+            <button class='booking-button' id='bookingButton'>Click to Get Away!</button>
+          </div>
+        </section>
+        <section class='trip-container'>
+          <h2 class='trip-header'>Your Trips</h2>
+          <div class=button-container>
+            <button class='all-trips' id='allTrips'>all trips</button>
+            <button class='pending' id='pending'>pending trips</button>
+          </div>
+          <div class='card-container' id='cardContainer'></div>
+        </section>
       </section>
     </main>
   </body>
