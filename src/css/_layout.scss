@@ -150,6 +150,7 @@ nav {
 
   .booking-container {
     @include dimensions(30vh, 30vw);
+    margin-top: 23vh;
   }
 
   .img-container {
@@ -174,6 +175,10 @@ nav {
   .booking-container {
     @include dimensions(50vh, 50vw);
     align-self: center; 
+  }
+
+  .trip-container {
+    margin-top: 0;
   }
 
   .card-container {
@@ -222,6 +227,10 @@ nav {
     align-self: center;
     position: unset;
     margin-top: 5px;
+  }
+
+  .booking-container {
+    margin-top: 18vh;
   }
 }
 
